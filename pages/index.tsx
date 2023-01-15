@@ -1,4 +1,5 @@
-import { Htag } from '@/components/Htag/Htag';
+import Button from '@/components/Button/Button';
+import Htag from '@/components/Htag/Htag';
 import Head from 'next/head';
 
 export default function Home() {
@@ -20,6 +21,14 @@ export default function Home() {
         <Htag tag="h1">Заголовок 1</Htag>
         <Htag tag="h2">Заголовок 2</Htag>
         <Htag tag="h3">Заголовок 3</Htag>
+        <Button appearance="ghost">Кнопка1</Button>
+        <Button appearance="primary">Кнопка2</Button>
+        <Button appearance="ghost" arrow="down">
+          Кнопка3
+        </Button>
+        <Button appearance="ghost" arrow="right">
+          Кнопка3
+        </Button>
       </main>
     </>
   );
