@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { MenuItem } from '@/interface/menu.interface';
+import { MenuItem } from '@/interfaces/menu.interface';
 import withLayout from '@/layout/Layout';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { TopPageModel } from '@/interface/page.interface';
+import { TopPageModel } from '@/interfaces/page.interface';
 import { ParsedUrlQuery } from 'querystring';
-import { ProductModel } from '@/interface/product.interface';
+import { ProductModel } from '@/interfaces/product.interface';
 
 const firstCategory = 0;
 

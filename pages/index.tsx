@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
-import { MenuItem } from '@/interface/menu.interface';
+import { MenuItem } from '@/interfaces/menu.interface';
 import axios from 'axios';
 import Button from '@/components/Button/Button';
 import Htag from '@/components/Htag/Htag';
@@ -21,10 +21,7 @@ function Home({ menu }: HomeProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://mc.yandex.ru" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
       </Head>
       <div>
         <Htag tag="h1">Заголовок 1</Htag>
@@ -51,12 +48,6 @@ function Home({ menu }: HomeProps): JSX.Element {
         <Tag color="primary">primary</Tag>
 
         <Rating rating={rating} isEditable setRating={setRating} />
-
-        <ul>
-          {menu.map((m) => (
-            <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-          ))}
-        </ul>
       </div>
     </>
   );
@@ -66,12 +57,9 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<MenuItem[]>(
-    process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
-    {
-      firstCategory,
-    },
-  );
+  const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+    firstCategory,
+  });
 
   return {
     props: {
