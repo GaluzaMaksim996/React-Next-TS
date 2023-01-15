@@ -1,16 +1,17 @@
 import { FunctionComponent } from 'react';
+import { LayoutProps } from './Layout.props';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import { LayoutProps } from './Layout.props';
 import Sidebar from './Sidebar/Sidebar';
+import styles from './Layout.module.css';
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
-      <Header />
-      <Sidebar />
-      <main>{children}</main>
-      <Footer />
+    <div className={styles.wrapper}>
+      <Header className={styles.header} />
+      <Sidebar className={styles.sidebar} />
+      <main className={styles.body}>{children}</main>
+      <Footer className={styles.footer} />
     </div>
   );
 };
