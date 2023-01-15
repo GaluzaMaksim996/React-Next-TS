@@ -3,10 +3,11 @@ import Htag from '@/components/Htag/Htag';
 import P from '@/components/P/P';
 import Rating from '@/components/Rating/Rating';
 import Tag from '@/components/Tag/Tag';
+import withLayout from '@/layout/Layout';
 import Head from 'next/head';
 import { useState } from 'react';
 
-export default function Home() {
+function Home() {
   const [rating, setRating] = useState<number>(4);
   return (
     <>
@@ -22,7 +23,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <main>
+      <div>
         <Htag tag="h1">Заголовок 1</Htag>
         <Htag tag="h2">Заголовок 2</Htag>
         <Htag tag="h3">Заголовок 3</Htag>
@@ -47,7 +48,9 @@ export default function Home() {
         <Tag color="primary">primary</Tag>
 
         <Rating rating={rating} isEditable setRating={setRating} />
-      </main>
+      </div>
     </>
   );
 }
+
+export default withLayout(Home);
