@@ -1,3 +1,4 @@
+import { Htag } from '@/components/Htag/Htag';
 import Head from 'next/head';
 
 export default function Home() {
@@ -16,7 +17,9 @@ export default function Home() {
         />
       </Head>
       <main>
-        <h1>Test</h1>
+        <Htag tag="h1">Заголовок 1</Htag>
+        <Htag tag="h2">Заголовок 2</Htag>
+        <Htag tag="h3">Заголовок 3</Htag>
       </main>
     </>
   );
