@@ -1,6 +1,7 @@
 import Button from '@/components/Button/Button';
 import Htag from '@/components/Htag/Htag';
-import { P } from '@/components/P/P';
+import P from '@/components/P/P';
+import Tag from '@/components/Tag/Tag';
 import Head from 'next/head';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Htag tag="h1">Заголовок 1</Htag>
         <Htag tag="h2">Заголовок 2</Htag>
         <Htag tag="h3">Заголовок 3</Htag>
+
         <Button appearance="ghost">Кнопка1</Button>
         <Button appearance="primary">Кнопка2</Button>
         <Button appearance="ghost" arrow="down">
@@ -34,6 +36,12 @@ export default function Home() {
         <P size="l">Параграф1</P>
         <P>Параграф2</P>
         <P size="s">Параграф3</P>
+
+        <Tag color="ghost">ghost</Tag>
+        <Tag color="red">red</Tag>
+        <Tag color="grey">grey</Tag>
+        <Tag color="green">green</Tag>
+        <Tag color="primary">primary</Tag>
       </main>
     </>
   );
