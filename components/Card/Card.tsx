@@ -2,7 +2,7 @@ import { CardProps } from './Card.props';
 import styles from './Card.module.css';
 import cn from 'classnames';
 
-export const Card = ({ color = 'white', children, className, ...props }: CardProps): JSX.Element => {
+const Card = ({ color = 'white', children, className, ...props }: CardProps): JSX.Element => {
   return (
     <div
       className={cn(styles.card, className, {
@@ -14,3 +14,5 @@ export const Card = ({ color = 'white', children, className, ...props }: CardPro
     </div>
   );
 };
+
+export default Card;
