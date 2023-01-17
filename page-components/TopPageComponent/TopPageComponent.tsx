@@ -8,7 +8,7 @@ import Advantages from '@/components/Advantages/Advantages';
 import { useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 import { SortEnum } from '@/components/Sort/Sort.props';
-import { Sort } from '@/components/Sort/Sort';
+import Sort from '@/components/Sort/Sort';
 
 const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps) => {
   const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });

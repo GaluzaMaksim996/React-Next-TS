@@ -3,7 +3,7 @@ import styles from './Sort.module.css';
 import SortIcon from './sort.svg';
 import cn from 'classnames';
 
-export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Element => {
+const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Element => {
   return (
     <div className={cn(styles.sort, className)} {...props}>
       <div className={styles.sortName} id="sort">
@@ -36,3 +36,5 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
     </div>
   );
 };
+
+export default Sort;
