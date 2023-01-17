@@ -4,6 +4,7 @@ import { firstLevelMenu } from '@/helpers/helpers';
 import styles from './Menu.module.css';
 import cn from 'classnames';
 import { FirstLevelMenuItem, PageItem } from '@/interfaces/menu.interface';
+import Link from 'next/link';
 
 const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
@@ -13,7 +14,7 @@ const Menu = (): JSX.Element => {
       <ul className={styles.firstLevelList}>
         {firstLevelMenu.map((m) => (
           <li key={m.route}>
-            <a href={`/${m.route}`}>
+            <Link href={`/${m.route}`}>
               <div
                 className={cn(styles.firstLevel, {
                   [styles.firstLevelActive]: m.id == firstCategory,
@@ -22,7 +23,7 @@ const Menu = (): JSX.Element => {
                 {m.icon}
                 <span>{m.name}</span>
               </div>
-            </a>
+            </Link>
             {m.id == firstCategory && buildSecondLevel(m)}
           </li>
         ))}
@@ -51,7 +52,7 @@ const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((page) => (
-      <a
+      <Link
         key={page._id}
         href={`/${route}/${page.alias}`}
         className={cn(styles.thirdLevel, {
@@ -59,7 +60,7 @@ const Menu = (): JSX.Element => {
         })}
       >
         {page.category}
-      </a>
+      </Link>
     ));
   };
 
