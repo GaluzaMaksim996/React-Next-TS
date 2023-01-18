@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ProductProps } from './Product.props';
 import Card from '../Card/Card';
@@ -12,7 +12,7 @@ import ReviewForm from '../ReviewForm/ReviewForm';
 import styles from './Product.module.css';
 import cn from 'classnames';
 
-const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+const Product = forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
   const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +26,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
   };
 
   return (
-    <div className={className} {...props}>
+    <div className={className} ref={ref} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
@@ -120,6 +120,6 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       </Card>
     </div>
   );
-};
+});
 
 export default Product;
