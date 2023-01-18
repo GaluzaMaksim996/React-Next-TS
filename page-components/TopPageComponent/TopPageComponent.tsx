@@ -5,7 +5,7 @@ import styles from './TopPageComponent.module.css';
 import HhData from '@/components/HhData/HhData';
 import { TopLevelCategory } from '@/interfaces/page.interface';
 import Advantages from '@/components/Advantages/Advantages';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 import { SortEnum } from '@/components/Sort/Sort.props';
 import Sort from '@/components/Sort/Sort';

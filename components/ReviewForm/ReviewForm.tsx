@@ -12,7 +12,7 @@ import { useState } from 'react';
 import { API } from '@/helpers/api';
 import axios from 'axios';
 
-const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
   const {
     register,
     control,
