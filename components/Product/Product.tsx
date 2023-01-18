@@ -5,6 +5,7 @@ import Card from '../Card/Card';
 import Rating from '../Rating/Rating';
 import Tag from '../Tag/Tag';
 import Button from '../Button/Button';
+import Review from '../Review/Review';
 import { declOfNum, priceRu } from '../../helpers/helpers';
 import Divider from '../Divider/Divider';
 import styles from './Product.module.css';
@@ -107,7 +108,14 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
           </Button>
         </div>
       </Card>
-      <div>Review</div>
+      <Card color="blue" className={styles.reviews} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
+        {product.reviews.map((r) => (
+          <div key={r._id}>
+            <Review review={r} />
+            <Divider />
+          </div>
+        ))}
+      </Card>
     </div>
   );
 };
