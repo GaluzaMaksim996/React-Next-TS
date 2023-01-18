@@ -5,6 +5,7 @@ import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import styles from './Layout.module.css';
 import { AppContextProvider, IAppContext } from '@/context/app.context';
+import Up from '@/components/Up/Up';
 
 const Layout = ({ children }: LayoutProps) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Sidebar className={styles.sidebar} />
       <main className={styles.body}>{children}</main>
       <Footer className={styles.footer} />
+      <Up />
     </div>
   );
 };
