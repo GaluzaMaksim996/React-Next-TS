@@ -8,6 +8,7 @@ import Button from '../Button/Button';
 import Review from '../Review/Review';
 import { declOfNum, priceRu } from '../../helpers/helpers';
 import Divider from '../Divider/Divider';
+import ReviewForm from '../ReviewForm/ReviewForm';
 import styles from './Product.module.css';
 import cn from 'classnames';
 
@@ -115,6 +116,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
             <Divider />
           </div>
         ))}
+        <ReviewForm productId={product._id} isOpened={isReviewOpened} />
       </Card>
     </div>
   );
