@@ -8,8 +8,13 @@ import { ProductModel } from '@/interfaces/product.interface';
 import { firstLevelMenu } from '@/helpers/helpers';
 import TopPageComponent from '@/page-components/TopPageComponent/TopPageComponent';
 import { API } from '@/helpers/api';
+import { Error404 } from '../404';
 
 const TopPage = ({ firstCategory, page, products }: TopPageProps) => {
+  if (!page || !products) {
+    return <Error404 />;
+  }
+
   return (
     <>
       <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
